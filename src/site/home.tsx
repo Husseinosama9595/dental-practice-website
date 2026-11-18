@@ -57,12 +57,13 @@ export function HomePage() {
               Dentistry that feels <em>considered.</em>
             </h1>
             <p className="hero__intro" data-reveal data-delay="2">
-              A calm, modern practice built around conversation, clear information and care shaped
-              around the person in the chair. Practice details are placeholders until supplied.
+              Discover a more thoughtful approach to dental care. With clear information,
+              time to ask questions and support at every step, feel more confident about
+              your dental care journey.
             </p>
             <div className="hero__actions" data-reveal data-delay="3">
               <Link className="btn btn--primary" to="/consultation">
-                Book a consultation
+                Request a consultation
                 <ArrowUpRight size={16} />
               </Link>
               <Link className="btn btn--ghost" to="/treatments">
@@ -88,10 +89,10 @@ export function HomePage() {
               priority
             />
             <div className="hero__card">
-              <strong>New patients welcome</strong>
+              <strong>Care starts with a conversation</strong>
               <span>
-                Consultation requests are answered directly by the practice. [Opening hours to be
-                supplied.]
+                 Have a question or considering treatment? Get in touch and let the
+                 practice help you understand your next steps.
               </span>
               <Link className="link-arrow" to="/contact">
                 Contact the practice <ArrowRight size={14} />
