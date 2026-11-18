@@ -1,23 +1,26 @@
-﻿import { useEffect, useId, useState } from 'react'
-import { Link, useRouterState } from '@tanstack/react-router'
-import { PRACTICE_CONFIG, type PracticeContact } from './content'
-import { IMAGES, type ImageKey } from './images'
+﻿import { useEffect, useId, useState } from "react";
+import { Link, useRouterState } from "@tanstack/react-router";
+import { PRACTICE_CONFIG, type PracticeContact } from "./content";
+import { IMAGES, type ImageKey } from "./images";
+import { HeartHandshake, Info, MessageCircle } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
+import { SiTiktok, SiX } from "react-icons/si";
 
-type IconProps = { size?: number }
+type IconProps = { size?: number };
 
 function iconProps(size: number) {
   return {
     width: size,
     height: size,
-    viewBox: '0 0 24 24',
-    fill: 'none',
-    stroke: 'currentColor',
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
     strokeWidth: 1.6,
-    strokeLinecap: 'round' as const,
-    strokeLinejoin: 'round' as const,
-    'aria-hidden': true,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true,
     focusable: false,
-  }
+  };
 }
 
 export function ArrowRight({ size = 16 }: IconProps) {
@@ -26,7 +29,7 @@ export function ArrowRight({ size = 16 }: IconProps) {
       <path d="M5 12h14" />
       <path d="m12 5 7 7-7 7" />
     </svg>
-  )
+  );
 }
 
 export function ArrowUpRight({ size = 17 }: IconProps) {
@@ -35,7 +38,7 @@ export function ArrowUpRight({ size = 17 }: IconProps) {
       <path d="M7 7h10v10" />
       <path d="M7 17 17 7" />
     </svg>
-  )
+  );
 }
 
 export function ArrowLeft({ size = 16 }: IconProps) {
@@ -44,7 +47,7 @@ export function ArrowLeft({ size = 16 }: IconProps) {
       <path d="m12 19-7-7 7-7" />
       <path d="M19 12H5" />
     </svg>
-  )
+  );
 }
 
 export function CloseIcon({ size = 22 }: IconProps) {
@@ -53,7 +56,7 @@ export function CloseIcon({ size = 22 }: IconProps) {
       <path d="M18 6 6 18" />
       <path d="m6 6 12 12" />
     </svg>
-  )
+  );
 }
 
 export function MenuIcon({ size = 22 }: IconProps) {
@@ -63,7 +66,7 @@ export function MenuIcon({ size = 22 }: IconProps) {
       <path d="M4 12h16" />
       <path d="M4 17h16" />
     </svg>
-  )
+  );
 }
 
 function PhoneIcon({ size = 15 }: IconProps) {
@@ -71,7 +74,7 @@ function PhoneIcon({ size = 15 }: IconProps) {
     <svg {...iconProps(size)}>
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
-  )
+  );
 }
 
 function MailIcon({ size = 15 }: IconProps) {
@@ -80,7 +83,7 @@ function MailIcon({ size = 15 }: IconProps) {
       <rect x="2" y="4" width="20" height="16" rx="2" />
       <path d="m22 6-10 7L2 6" />
     </svg>
-  )
+  );
 }
 
 function WhatsAppIcon({ size = 15 }: IconProps) {
@@ -88,7 +91,7 @@ function WhatsAppIcon({ size = 15 }: IconProps) {
     <svg {...iconProps(size)}>
       <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
     </svg>
-  )
+  );
 }
 
 function PinIcon({ size = 15 }: IconProps) {
@@ -97,7 +100,7 @@ function PinIcon({ size = 15 }: IconProps) {
       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
       <circle cx="12" cy="10" r="2.6" />
     </svg>
-  )
+  );
 }
 
 function SettingsIcon({ size = 14 }: IconProps) {
@@ -108,7 +111,7 @@ function SettingsIcon({ size = 14 }: IconProps) {
       <circle cx="17" cy="17" r="3" />
       <circle cx="7" cy="7" r="3" />
     </svg>
-  )
+  );
 }
 
 export function SparkIcon({ size = 20 }: IconProps) {
@@ -116,7 +119,7 @@ export function SparkIcon({ size = 20 }: IconProps) {
     <svg {...iconProps(size)}>
       <path d="M12 3c1.6 3.4 3.6 5.4 7 7-3.4 1.6-5.4 3.6-7 7-1.6-3.4-3.6-5.4-7-7 3.4-1.6 5.4-3.6 7-7z" />
     </svg>
-  )
+  );
 }
 
 export function HeartIcon({ size = 20 }: IconProps) {
@@ -124,7 +127,7 @@ export function HeartIcon({ size = 20 }: IconProps) {
     <svg {...iconProps(size)}>
       <path d="M12 20s-7-4.4-7-9.2A4.1 4.1 0 0 1 12 7.8 4.1 4.1 0 0 1 19 10.8C19 15.6 12 20 12 20z" />
     </svg>
-  )
+  );
 }
 
 export function ShieldIcon({ size = 20 }: IconProps) {
@@ -133,7 +136,7 @@ export function ShieldIcon({ size = 20 }: IconProps) {
       <path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6z" />
       <path d="m9 12 2 2 4-4" />
     </svg>
-  )
+  );
 }
 
 export function ClockIcon({ size = 20 }: IconProps) {
@@ -142,7 +145,7 @@ export function ClockIcon({ size = 20 }: IconProps) {
       <circle cx="12" cy="12" r="9" />
       <path d="M12 7.5V12l3 2" />
     </svg>
-  )
+  );
 }
 
 export function ToothIcon({ size = 22 }: IconProps) {
@@ -150,46 +153,46 @@ export function ToothIcon({ size = 22 }: IconProps) {
     <svg {...iconProps(size)}>
       <path d="M12 4c2.6 0 4 1.5 4 4 0 2-.7 3.8-1.2 5.6-.4 1.5-.7 2.9-1.1 3.9-.3.9-1.2 1-1.6.2L11 15.6h-.4L9.4 17.7c-.4.8-1.3.7-1.6-.2-.4-1-.7-2.4-1.1-3.9C6.2 11.8 5.5 10 5.5 8c0-2.5 1.4-4 4-4h2.5z" />
     </svg>
-  )
+  );
 }
 
 export function Media({
   image,
   alt,
-  ratio = 'landscape',
+  ratio = "landscape",
   tag,
-  className = '',
+  className = "",
   priority = false,
 }: {
-  image: ImageKey
-  alt: string
-  ratio?: 'portrait' | 'landscape' | 'wide' | 'square' | 'tall'
-  tag?: string
-  className?: string
-  priority?: boolean
+  image: ImageKey;
+  alt: string;
+  ratio?: "portrait" | "landscape" | "wide" | "square" | "tall";
+  tag?: string;
+  className?: string;
+  priority?: boolean;
 }) {
   return (
     <div className={`media media--${ratio} ${className}`.trim()}>
       <img
         src={IMAGES[image]}
         alt={alt}
-        loading={priority ? 'eager' : 'lazy'}
+        loading={priority ? "eager" : "lazy"}
         decoding="async"
-        {...(priority ? { fetchPriority: 'high' as const } : {})}
+        {...(priority ? { fetchPriority: "high" as const } : {})}
       />
       {tag && <span className="media__tag">{tag}</span>}
     </div>
-  )
+  );
 }
 
 export function Placeholder({
   label,
-  note = 'Practice asset to be supplied',
-  className = '',
+  note = "Practice asset to be supplied",
+  className = "",
 }: {
-  label: string
-  note?: string
-  className?: string
+  label: string;
+  note?: string;
+  className?: string;
 }) {
   return (
     <div className={`placeholder ${className}`.trim()}>
@@ -199,20 +202,20 @@ export function Placeholder({
       <span className="placeholder__label">{label}</span>
       <span className="placeholder__note">{note}</span>
     </div>
-  )
+  );
 }
 
 export function Comparison({
-  comparisonId = 'comparison',
-  beforeLabel = 'Before photograph placeholder',
-  afterLabel = 'After photograph placeholder',
+  comparisonId = "comparison",
+  beforeLabel = "Before photograph placeholder",
+  afterLabel = "After photograph placeholder",
 }: {
-  comparisonId?: string
-  beforeLabel?: string
-  afterLabel?: string
+  comparisonId?: string;
+  beforeLabel?: string;
+  afterLabel?: string;
 }) {
-  const [position, setPosition] = useState(50)
-  const helpId = `${comparisonId}-help`
+  const [position, setPosition] = useState(50);
+  const helpId = `${comparisonId}-help`;
 
   return (
     <>
@@ -220,15 +223,27 @@ export function Comparison({
         className="comparison"
         role="group"
         aria-label="Before-and-after image comparison"
-        style={{ ['--split' as string]: `${position}%` }}
+        style={{ ["--split" as string]: `${position}%` }}
       >
-        <div className="comparison__pane comparison__pane--after" aria-hidden="true">
-          <span className="comparison__label">AFTER · IMAGE TO BE SUPPLIED</span>
+        <div
+          className="comparison__pane comparison__pane--after"
+          aria-hidden="true"
+        >
+          <span className="comparison__label">
+            AFTER · IMAGE TO BE SUPPLIED
+          </span>
         </div>
-        <div className="comparison__pane comparison__pane--before" aria-hidden="true">
-          <span className="comparison__label">BEFORE · IMAGE TO BE SUPPLIED</span>
+        <div
+          className="comparison__pane comparison__pane--before"
+          aria-hidden="true"
+        >
+          <span className="comparison__label">
+            BEFORE · IMAGE TO BE SUPPLIED
+          </span>
         </div>
-        <span className="comparison__chip comparison__chip--before">Before</span>
+        <span className="comparison__chip comparison__chip--before">
+          Before
+        </span>
         <span className="comparison__chip comparison__chip--after">After</span>
         <span className="comparison__divider" aria-hidden="true">
           <i />
@@ -248,20 +263,24 @@ export function Comparison({
         Interactive image comparison · practice photography not yet supplied
       </p>
     </>
-  )
+  );
 }
 
 export function ContactLinks({
   contact,
-  variant = 'inline',
+  variant = "inline",
 }: {
-  contact: PracticeContact
-  variant?: 'inline' | 'stacked'
+  contact: PracticeContact;
+  variant?: "inline" | "stacked";
 }) {
-  const whatsapp = contact.whatsapp.replace(/\D/g, '')
+  const whatsapp = contact.whatsapp.replace(/\D/g, "");
   return (
     <div
-      className={variant === 'stacked' ? 'contact-links contact-links--stacked' : 'contact-links'}
+      className={
+        variant === "stacked"
+          ? "contact-links contact-links--stacked"
+          : "contact-links"
+      }
       aria-label="Contact options"
     >
       {contact.phone ? (
@@ -305,47 +324,64 @@ export function ContactLinks({
         </span>
       )}
     </div>
-  )
+  );
 }
 
 const PRIMARY_NAV = [
-  { to: '/about', label: 'The practice' },
-  { to: '/treatments', label: 'Treatments' },
-  { to: '/smile-gallery', label: 'Smile gallery' },
-  { to: '/patient-information', label: 'Patient information' },
-  { to: '/journal', label: 'Journal' },
-] as const
+  { to: "/about", label: "The practice" },
+  { to: "/treatments", label: "Treatments" },
+  { to: "/smile-gallery", label: "Smile gallery" },
+  { to: "/patient-information", label: "Patient information" },
+  { to: "/journal", label: "Journal" },
+] as const;
 
 const MOBILE_NAV = [
   ...PRIMARY_NAV,
-  { to: '/reviews', label: 'Reviews' },
-  { to: '/faqs', label: 'FAQs' },
-  { to: '/contact', label: 'Contact' },
-] as const
+  { to: "/reviews", label: "Reviews" },
+  { to: "/faqs", label: "FAQs" },
+  { to: "/contact", label: "Contact" },
+] as const;
 
 export function SiteHeader() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const pathname = useRouterState({ select: (state) => state.location.pathname })
+  const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = useRouterState({
+    select: (state) => state.location.pathname,
+  });
 
   useEffect(() => {
-    setMenuOpen(false)
-  }, [pathname])
+    setMenuOpen(false);
+  }, [pathname]);
 
-  const isActive = (to: string) => pathname === to || pathname.startsWith(`${to}/`)
+  const isActive = (to: string) =>
+    pathname === to || pathname.startsWith(`${to}/`);
 
   return (
     <>
       <div className="topbar">
         <div className="topbar__inner page-container">
           <span className="topbar__note">
-            <i className="topbar__dot" aria-hidden="true" />
-            Practice details to be supplied · demo content
+            <HeartHandshake size={15} strokeWidth={1.8} />
+            Thoughtful dental care, centred around you
           </span>
           <span className="topbar__meta">
-            <span>
+            <Link to="/about">
+              <Info size={15} strokeWidth={1.8} />
+              About MolarFixing
+            </Link>
+
+            <Link to="/contact">
+              <MessageCircle size={15} strokeWidth={1.8} />
+              Get in touch
+            </Link>
+            <a
+              href="https://maps.app.goo.gl/f8DmKqghRxeC5cFm6"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Find MolarFixing on Google Maps"
+            >
               <PinIcon />
-              [CLINIC ADDRESS]
-            </span>
+              Find us on Google Maps
+            </a>
             <a href="/contact">
               <PhoneIcon />
               Contact the practice
@@ -356,13 +392,19 @@ export function SiteHeader() {
 
       <header className="site-header">
         <div className="header-inner page-container">
-          <Link className="brand" to="/" aria-label={`${PRACTICE_CONFIG.name}, home`}>
+          <Link
+            className="brand"
+            to="/"
+            aria-label={`${PRACTICE_CONFIG.name}, home`}
+          >
             <span className="brand__mark" aria-hidden="true">
               <ToothIcon size={20} />
             </span>
             <span className="brand__copy">
               <span className="brand__name">{PRACTICE_CONFIG.name}</span>
-              <span className="brand__descriptor">{PRACTICE_CONFIG.descriptor}</span>
+              <span className="brand__descriptor">
+                {PRACTICE_CONFIG.descriptor}
+              </span>
             </span>
           </Link>
 
@@ -371,7 +413,7 @@ export function SiteHeader() {
               <Link
                 key={item.to}
                 to={item.to}
-                aria-current={isActive(item.to) ? 'page' : undefined}
+                aria-current={isActive(item.to) ? "page" : undefined}
               >
                 {item.label}
               </Link>
@@ -380,7 +422,7 @@ export function SiteHeader() {
 
           <div className="header-actions">
             <Link className="btn btn--primary" to="/consultation">
-              Book a consultation
+              Request a consultation
               <ArrowUpRight size={15} />
             </Link>
             <button
@@ -389,7 +431,9 @@ export function SiteHeader() {
               data-testid="menu-toggle"
               aria-controls="mobile-navigation"
               aria-expanded={menuOpen}
-              aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-label={
+                menuOpen ? "Close navigation menu" : "Open navigation menu"
+              }
               onClick={() => setMenuOpen((open) => !open)}
             >
               {menuOpen ? <CloseIcon /> : <MenuIcon />}
@@ -409,25 +453,29 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link className="btn btn--primary" to="/consultation" onClick={() => setMenuOpen(false)}>
-            Book a consultation
+          <Link
+            className="btn btn--primary"
+            to="/consultation"
+            onClick={() => setMenuOpen(false)}
+          >
+            Request a consultation
             <ArrowUpRight size={15} />
           </Link>
         </nav>
       </header>
     </>
-  )
+  );
 }
 
 export function SiteFooter() {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
   return (
     <footer className="site-footer" id="footer">
       <div className="page-container">
         <div className="footer-cta">
           <div>
             <span className="eyebrow">A place to begin</span>
-            <h2>Let’s make room for a conversation.</h2>
+            <h2>Your smile deserves thoughtful care.</h2>
           </div>
           <Link className="btn btn--light" to="/consultation">
             Request a consultation
@@ -439,10 +487,53 @@ export function SiteFooter() {
           <div className="footer-brand">
             <strong>{PRACTICE_CONFIG.name}</strong>
             <p>
-              A calm, considered dental practice. Practice details, team biographies and treatment
-              information will be supplied and approved before launch.
+              MolarFixing is here to make looking after your smile feel simpler.
+              Explore our dental treatments, discover your options and get in
+              touch with our team to take the next step towards a healthier,
+              more confident smile.
             </p>
             <ContactLinks contact={PRACTICE_CONFIG.contact} variant="stacked" />
+          </div>
+          <div className="footer-socials">
+            <span>Follow us on our socials</span>
+
+            <div className="footer-socials__links">
+              <a
+                href="https://www.instagram.com/YOUR_USERNAME"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow MolarFixing on Instagram"
+              >
+                <Instagram size={19} />
+              </a>
+
+              <a
+                href="https://www.facebook.com/YOUR_USERNAME"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow MolarFixing on Facebook"
+              >
+                <Facebook size={19} />
+              </a>
+
+              <a
+                href="https://x.com/YOUR_USERNAME"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow MolarFixing on X"
+              >
+                <SiX size={17} />
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@YOUR_USERNAME"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow MolarFixing on TikTok"
+              >
+                <SiTiktok size={18} />
+              </a>
+            </div>
           </div>
 
           <div>
@@ -470,17 +561,23 @@ export function SiteFooter() {
           <div>
             <h3>Visit</h3>
             <div className="footer-links">
-              <span>[CLINIC ADDRESS]</span>
-              <span>Opening hours to be supplied</span>
+              <a
+                href="https://maps.app.goo.gl/f8DmKqghRxeC5cFm6"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Find MolarFixing on Google Maps"
+              >
+                <PinIcon />
+                Find us on Google Maps
+              </a>
+              <span>Open Daily from 10am-10pm except for fridays</span>
               <Link to="/contact">Directions and parking</Link>
             </div>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <span>
-            © {year} {PRACTICE_CONFIG.name} · Demo content, practice details to be supplied
-          </span>
+          <span>© {year} MolarFixing. All rights reserved.</span>
           <nav aria-label="Legal information">
             <Link to="/privacy">Privacy</Link>
             <Link to="/cookies">Cookies</Link>
@@ -489,72 +586,90 @@ export function SiteFooter() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
-const CONSENT_STORAGE_KEY = 'practice-cookie-preferences-v1'
+const CONSENT_STORAGE_KEY = "practice-cookie-preferences-v1";
 
 export function CookieConsent() {
-  const [ready, setReady] = useState(false)
-  const [decided, setDecided] = useState(false)
-  const [analytics, setAnalytics] = useState(false)
-  const [pendingAnalytics, setPendingAnalytics] = useState(false)
-  const [dialogOpen, setDialogOpen] = useState(false)
-  const titleId = useId()
+  const [ready, setReady] = useState(false);
+  const [decided, setDecided] = useState(false);
+  const [analytics, setAnalytics] = useState(false);
+  const [pendingAnalytics, setPendingAnalytics] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const titleId = useId();
 
   useEffect(() => {
     try {
-      const saved = window.localStorage.getItem(CONSENT_STORAGE_KEY)
+      const saved = window.localStorage.getItem(CONSENT_STORAGE_KEY);
       if (saved) {
-        const choices = JSON.parse(saved) as { essential?: boolean; analytics?: boolean }
-        if (choices.essential === true && typeof choices.analytics === 'boolean') {
-          setAnalytics(choices.analytics)
-          setDecided(true)
+        const choices = JSON.parse(saved) as {
+          essential?: boolean;
+          analytics?: boolean;
+        };
+        if (
+          choices.essential === true &&
+          typeof choices.analytics === "boolean"
+        ) {
+          setAnalytics(choices.analytics);
+          setDecided(true);
         }
       }
     } catch {
       // Storage can be unavailable; the choice stays valid for this page session.
     }
-    setReady(true)
-  }, [])
+    setReady(true);
+  }, []);
 
   const save = (value: boolean) => {
-    setAnalytics(value)
-    setDecided(true)
+    setAnalytics(value);
+    setDecided(true);
     try {
       window.localStorage.setItem(
         CONSENT_STORAGE_KEY,
         JSON.stringify({ essential: true, analytics: value }),
-      )
+      );
     } catch {
       // Keep the current choice in memory when the browser blocks local storage.
     }
-    setDialogOpen(false)
-  }
+    setDialogOpen(false);
+  };
 
   const openPreferences = () => {
-    setPendingAnalytics(analytics)
-    setDialogOpen(true)
-  }
+    setPendingAnalytics(analytics);
+    setDialogOpen(true);
+  };
 
-  if (!ready) return null
+  if (!ready) return null;
 
   return (
     <>
       {!decided ? (
-        <section className="consent-banner" aria-label="Cookie preferences" role="region">
+        <section
+          className="consent-banner"
+          aria-label="Cookie preferences"
+          role="region"
+        >
           <div>
             <span className="eyebrow">Your privacy · your choice</span>
             <p>
-              Only essential storage is used unless you choose otherwise. Optional analytics stay off
-              until you consent.
+              Only essential storage is used unless you choose otherwise.
+              Optional analytics stay off until you consent.
             </p>
           </div>
           <div className="consent-actions">
-            <button className="consent-button" type="button" onClick={() => save(false)}>
+            <button
+              className="consent-button"
+              type="button"
+              onClick={() => save(false)}
+            >
               Reject optional
             </button>
-            <button className="consent-button" type="button" onClick={openPreferences}>
+            <button
+              className="consent-button"
+              type="button"
+              onClick={openPreferences}
+            >
               Preferences
             </button>
             <button
@@ -567,7 +682,11 @@ export function CookieConsent() {
           </div>
         </section>
       ) : (
-        <button className="consent-settings" type="button" onClick={openPreferences}>
+        <button
+          className="consent-settings"
+          type="button"
+          onClick={openPreferences}
+        >
           <SettingsIcon />
           Cookie settings
         </button>
@@ -578,7 +697,7 @@ export function CookieConsent() {
           className="consent-dialog"
           open
           aria-labelledby={titleId}
-          style={{ position: 'fixed', inset: '0', margin: 'auto' }}
+          style={{ position: "fixed", inset: "0", margin: "auto" }}
         >
           <div className="lightbox-head">
             <div>
@@ -596,8 +715,9 @@ export function CookieConsent() {
             </button>
           </div>
           <p>
-            Choose whether this browser may store optional analytics preferences. No analytics
-            provider or tracking script is configured in this demo.
+            Choose whether this browser may store optional analytics
+            preferences. No analytics provider or tracking script is configured
+            in this demo.
           </p>
           <div className="consent-category">
             <div>
@@ -610,8 +730,8 @@ export function CookieConsent() {
             <span>
               <strong>Optional analytics</strong>
               <small>
-                Analytics stay disabled until the practice configures a provider and you give
-                consent.
+                Analytics stay disabled until the practice configures a provider
+                and you give consent.
               </small>
             </span>
             <input
@@ -621,10 +741,18 @@ export function CookieConsent() {
             />
           </label>
           <div className="consent-actions consent-actions--dialog">
-            <button className="consent-button" type="button" onClick={() => save(false)}>
+            <button
+              className="consent-button"
+              type="button"
+              onClick={() => save(false)}
+            >
               Reject optional
             </button>
-            <button className="consent-button" type="button" onClick={() => save(pendingAnalytics)}>
+            <button
+              className="consent-button"
+              type="button"
+              onClick={() => save(pendingAnalytics)}
+            >
               Save preferences
             </button>
             <button
@@ -635,11 +763,15 @@ export function CookieConsent() {
               Accept all
             </button>
           </div>
-          <Link className="consent-policy" to="/cookies" onClick={() => setDialogOpen(false)}>
+          <Link
+            className="consent-policy"
+            to="/cookies"
+            onClick={() => setDialogOpen(false)}
+          >
             Read the cookie policy <ArrowUpRight size={13} />
           </Link>
         </dialog>
       ) : null}
     </>
-  )
+  );
 }

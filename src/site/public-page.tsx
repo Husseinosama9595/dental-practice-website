@@ -13,6 +13,7 @@ import {
   type PatientInfoContent,
   type TreatmentContent,
 } from './content'
+import { PracticeMap } from '../components/PracticeMap'
 import {
   ArrowRight,
   ArrowUpRight,
@@ -775,6 +776,11 @@ function PageBody({ page }: { page: PageView }) {
               </div>
             </div>
           </section>
+            {/* GOOGLE MAP SECTION */}
+      <section className="section page-container">
+        <PracticeMap />
+      </section>
+      
           <section className="section section--tight page-container">
             <Media
               image="reception"

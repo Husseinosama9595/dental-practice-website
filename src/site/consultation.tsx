@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from 'react'
 import { Link } from '@tanstack/react-router'
 import { submitConsultation } from './consultation-server'
+import { PracticeMap } from '../components/PracticeMap'
 
 import { PRACTICE_CONFIG } from './content'
 import { ArrowRight, ArrowUpRight, ContactLinks, Media, ShieldIcon } from './components'
@@ -488,6 +489,10 @@ export function ConsultationPage() {
             </Link>
           </aside>
         </div>
+      </section>
+       {/* Practice location */}
+      <section className="section page-container">
+        <PracticeMap />
       </section>
     </>
   )

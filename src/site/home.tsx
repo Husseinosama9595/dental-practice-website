@@ -19,22 +19,22 @@ const VALUES = [
   {
     icon: <SparkIcon />,
     title: 'Considered care',
-    body: '[The practice’s approved description of its care approach will appear here.]',
+    body: 'We take a thoughtful, personalised approach to dentistry, focusing on your individual needs and helping you feel confident at every stage of your dental journey.',
   },
   {
     icon: <HeartIcon />,
     title: 'Time to talk',
-    body: '[How appointments are structured and what patients can expect, supplied by the practice.]',
+    body: 'Your comfort matters. We take the time to listen, answer your questions and help you understand what to expect from your visit.',
   },
   {
     icon: <ShieldIcon />,
     title: 'Clear information',
-    body: '[Treatment information, options and costs will be reviewed and approved by the practice.]',
+    body: 'We believe in keeping things straightforward, with clear explanations of treatments, available options and costs so you can make informed decisions.',
   },
   {
     icon: <ClockIcon />,
     title: 'Easy to reach',
-    body: '[Practice opening hours, contact details and appointment availability to be supplied.]',
+    body: 'Getting in touch should be simple. Contact our team to discuss your questions, appointment enquiries and how we can help.',
   },
 ]
 
@@ -52,7 +52,9 @@ export function HomePage() {
       <section className="hero page-container" aria-labelledby="hero-title">
         <div className="hero__grid">
           <div className="hero__copy">
-            <span className="eyebrow">Independent dental practice</span>
+            <span className="eyebrow">
+              
+            </span>
             <h1 id="hero-title" data-reveal data-delay="1">
               Dentistry that feels <em>considered.</em>
             </h1>
@@ -145,7 +147,7 @@ export function HomePage() {
           </div>
 
           <div className="treatment-showcase">
-            {visibleTreatments.slice(0, 1).map((treatment, index) => (
+            {visibleTreatments.slice(0, 6).map((treatment, index) => (
               <Link
                 className="treatment-card"
                 key={`${treatment.slug}-${index}`}
@@ -155,14 +157,14 @@ export function HomePage() {
               >
                 <Media
                   image={TREATMENT_IMAGES[index % TREATMENT_IMAGES.length]}
-                  alt="Practice treatment imagery supplied by the practice"
+                  alt={`${treatment.title} at MolarFixing`}
                   ratio="landscape"
                 />
                 <div className="treatment-card__body">
                   <h3>{treatment.title}</h3>
                   <p>{treatment.summary}</p>
                   <div className="treatment-card__foot">
-                    <span>Practice information</span>
+                    <span>Explore treatment</span>
                     <span className="treatment-card__arrow">
                       <ArrowUpRight size={16} />
                     </span>

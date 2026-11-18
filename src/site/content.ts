@@ -16,17 +16,17 @@ export interface PracticeConfig {
 }
 
 export const PRACTICE_CONFIG: PracticeConfig = {
-  name: '[PRACTICE NAME]',
-  descriptor: 'INDEPENDENT DENTAL PRACTICE',
+  name: 'MolarFixing',
+  descriptor: 'MODERN DENTAL CARE',
   demoContent: true,
   seo: { siteOrigin: '' },
   contact: {
-    phone: '',
-    email: '',
-    whatsapp: '',
-    address: '',
-    openingHours: '',
-    mapUrl: '',
+    phone: '01099847644',
+    email: 'hossammohamed95952001@gmail.com',
+    whatsapp: '+201099847644',
+    address: '13 elmohandeseen',
+    openingHours: '10am-10pm',
+    mapUrl: 'https://maps.app.goo.gl/f8DmKqghRxeC5cFm6',
   },
 }
 
@@ -214,25 +214,75 @@ export const PUBLIC_CONTENT = {
       body: '[Verified information about the clinic, facilities, and accessibility — to be supplied.]',
     },
   ] as ContentSection[],
-  treatments: [
-    {
-      slug: 'treatment-placeholder',
-      title: '[TREATMENT NAME]',
-      summary: '[Practice-approved treatment summary to be supplied.]',
-      sections: [
-        { heading: 'Overview', body: placeholderNotice },
-        {
-          heading: 'What to expect',
-          body: '[Treatment process and options will be described by the practice.]',
-        },
-        {
-          heading: 'Aftercare',
-          body: '[Aftercare guidance will be supplied and reviewed by the practice.]',
-        },
-      ],
-      published: false,
-    },
-  ] as TreatmentContent[],
+  
+treatments: [
+  {
+    slug: 'composite-bonding',
+    title: 'Composite Bonding',
+    summary: 'Enhance the appearance of your smile with a treatment designed to improve the shape and appearance of teeth.',
+    sections: [
+      { heading: 'Overview', body: placeholderNotice },
+      { heading: 'What to expect', body: placeholderNotice },
+      { heading: 'Aftercare', body: placeholderNotice },
+    ],
+    published: false,
+  },
+  {
+    slug: 'dental-veneers',
+    title: 'Dental Veneers',
+    summary: 'Explore personalised options for improving the appearance of your smile with dental veneers.',
+    sections: [
+      { heading: 'Overview', body: placeholderNotice },
+      { heading: 'What to expect', body: placeholderNotice },
+      { heading: 'Aftercare', body: placeholderNotice },
+    ],
+    published: false,
+  },
+  {
+    slug: 'teeth-whitening',
+    title: 'Teeth Whitening',
+    summary: 'Discover professional teeth whitening options for a brighter-looking smile.',
+    sections: [
+      { heading: 'Overview', body: placeholderNotice },
+      { heading: 'What to expect', body: placeholderNotice },
+      { heading: 'Aftercare', body: placeholderNotice },
+    ],
+    published: false,
+  },
+  {
+    slug: 'dental-implants',
+    title: 'Dental Implants',
+    summary: 'Learn about options for replacing missing teeth and restoring your smile.',
+    sections: [
+      { heading: 'Overview', body: placeholderNotice },
+      { heading: 'What to expect', body: placeholderNotice },
+      { heading: 'Aftercare', body: placeholderNotice },
+    ],
+    published: false,
+  },
+  {
+    slug: 'dentures',
+    title: 'Dentures',
+    summary: 'Explore personalised denture options designed to restore function and appearance.',
+    sections: [
+      { heading: 'Overview', body: placeholderNotice },
+      { heading: 'What to expect', body: placeholderNotice },
+      { heading: 'Aftercare', body: placeholderNotice },
+    ],
+    published: false,
+  },
+  {
+    slug: 'general-dentistry',
+    title: 'General Dentistry',
+    summary: 'Look after your oral health with routine examinations and preventative dental care.',
+    sections: [
+      { heading: 'Overview', body: placeholderNotice },
+      { heading: 'What to expect', body: placeholderNotice },
+      { heading: 'Aftercare', body: placeholderNotice },
+    ],
+    published: false,
+  },
+] as TreatmentContent[],
   dentist: [
     {
       slug: 'dentist-placeholder',
