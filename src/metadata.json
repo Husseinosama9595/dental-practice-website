@@ -1,0 +1,81 @@
+﻿{
+  "/": {
+    "title": "[PRACTICE NAME] | Dental care, thoughtfully considered",
+    "description": "Explore [PRACTICE NAME], a dental practice focused on conversation, clear information and care shaped around you."
+  },
+  "/about": {
+    "title": "[PRACTICE NAME] | About the practice",
+    "description": "Learn about [PRACTICE NAME]. Practice story, care approach, and team information will be supplied by the practice."
+  },
+  "/about/team": {
+    "title": "[PRACTICE NAME] | Our team",
+    "description": "Meet the team at [PRACTICE NAME]. Team profiles will appear when approved by the practice."
+  },
+  "/about/dentist/$slug": {
+    "title": "[DENTIST NAME] | [PRACTICE NAME]",
+    "description": "Meet the practitioner at [PRACTICE NAME]. Verified profile information will be supplied by the practice."
+  },
+  "/treatments": {
+    "title": "[PRACTICE NAME] | Treatments",
+    "description": "Explore treatment information from [PRACTICE NAME]. Services and clinical details will be confirmed by the practice."
+  },
+  "/treatments/$slug": {
+    "title": "[TREATMENT NAME] | [PRACTICE NAME]",
+    "description": "Practice-reviewed information about [TREATMENT NAME] will be supplied by [PRACTICE NAME]."
+  },
+  "/smile-gallery": {
+    "title": "[PRACTICE NAME] | Smile gallery",
+    "description": "Explore approved treatment case photography from [PRACTICE NAME]. Images and captions are supplied by the practice with documented consent."
+  },
+  "/smile-gallery/$slug": {
+    "title": "[CASE TITLE] | [PRACTICE NAME]",
+    "description": "Practice-approved case photography and context from [PRACTICE NAME]. Individual outcomes vary."
+  },
+  "/consultation": {
+    "title": "[PRACTICE NAME] | Request a consultation",
+    "description": "Send a consultation request to [PRACTICE NAME]. The request asks the practice to follow up and does not confirm an appointment."
+  },
+  "/patient-information": {
+    "title": "[PRACTICE NAME] | Patient information",
+    "description": "Practical patient information from [PRACTICE NAME]. Visit details and guidance will be supplied by the practice."
+  },
+  "/faqs": {
+    "title": "[PRACTICE NAME] | Frequently asked questions",
+    "description": "Answers to common questions will be supplied and reviewed by [PRACTICE NAME]."
+  },
+  "/reviews": {
+    "title": "[PRACTICE NAME] | Patient reviews",
+    "description": "Patient reviews will appear here only after they are supplied, approved, and cleared for publication."
+  },
+  "/journal": {
+    "title": "[PRACTICE NAME] | Journal",
+    "description": "Read articles from [PRACTICE NAME]. Journal content is locally maintained and reviewed by the practice."
+  },
+  "/journal/$slug": {
+    "title": "[ARTICLE TITLE] | [PRACTICE NAME]",
+    "description": "A practice-reviewed journal article from [PRACTICE NAME]."
+  },
+  "/contact": {
+    "title": "[PRACTICE NAME] | Contact",
+    "description": "Contact [PRACTICE NAME] by telephone, WhatsApp, or email. Practice location and hours will be supplied."
+  },
+  "/privacy": {
+    "title": "[PRACTICE NAME] | Privacy policy",
+    "description": "Privacy information for [PRACTICE NAME]. This customer-specific policy requires legal review before launch."
+  },
+  "/cookies": {
+    "title": "[PRACTICE NAME] | Cookie policy",
+    "description": "Cookie information for [PRACTICE NAME]. This policy will reflect the configured site integrations."
+  },
+  "/terms": {
+    "title": "[PRACTICE NAME] | Terms of use",
+    "description": "Terms information for [PRACTICE NAME]. Customer-specific terms require review before launch."
+  },
+  "default": {
+    "title": "[PRACTICE NAME] | Dental care, thoughtfully considered",
+    "description": "Explore [PRACTICE NAME], a dental practice focused on conversation, clear information and care shaped around you.",
+    "openGraph": {
+      "images": []
+    }
+  }
+}
