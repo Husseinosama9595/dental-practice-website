@@ -1,10 +1,71 @@
 ﻿import { createServerFn } from "@tanstack/react-start"
+import { getRequestHeader, getRequestIP } from "@tanstack/react-start/server"
+import { Ratelimit } from "@upstash/ratelimit"
+import { Redis } from "@upstash/redis"
+import { createHash } from "node:crypto"
+import { isIP } from "node:net"
 
 const CONTACT_METHODS = ["phone", "whatsapp", "email"] as const
 const CONTACT_TIMES = ["morning", "afternoon", "anytime"] as const
 
 const CONFIRMATION =
   "Your consultation request was submitted. This does not confirm an appointment; the practice will contact you."
+
+let consultationRateLimiter: Ratelimit | undefined
+
+function getConsultationRateLimiter(): Ratelimit {
+  if (!consultationRateLimiter) {
+    const url = process.env.UPSTASH_REDIS_REST_URL
+    const token = process.env.UPSTASH_REDIS_REST_TOKEN
+
+    if (!url || !token) {
+      throw new Error("Upstash rate limiter is not configured.")
+    }
+
+    consultationRateLimiter = new Ratelimit({
+      redis: new Redis({ url, token }),
+      limiter: Ratelimit.slidingWindow(5, "15 m"),
+      analytics: false,
+      prefix: "dental:consultation",
+    })
+  }
+
+  return consultationRateLimiter
+}
+
+async function enforceConsultationRateLimit(): Promise<void> {
+  const clientIp = getRequestHeader("cf-connecting-ip")?.trim() ?? (process.env.NODE_ENV !== "production" ? getRequestIP() : undefined)
+
+  if (!clientIp || isIP(clientIp) === 0) {
+    throw new Error(
+      "RATE_LIMIT_UNAVAILABLE|{}|The enquiry service is temporarily unavailable. Please try again shortly or contact the practice directly.",
+    )
+  }
+
+  const identifier = createHash("sha256")
+    .update(clientIp)
+    .digest("hex")
+
+  let allowed: boolean
+
+  try {
+    const result = await getConsultationRateLimiter().limit(identifier)
+    allowed = result.success
+  } catch {
+    console.error("consultation_rate_limit_failed", {
+      reason: "upstash_unavailable",
+    })
+
+    // Preserve legitimate enquiries if Upstash temporarily fails.
+    return
+  }
+
+  if (!allowed) {
+    throw new Error(
+      "RATE_LIMITED|{}|Too many consultation requests have been sent. Please wait a little while before trying again.",
+    )
+  }
+}
 
 type ConsultationInput = {
   name: string
@@ -145,6 +206,8 @@ export const submitConsultation = createServerFn({ method: "POST" })
       )
     }
 
+    await enforceConsultationRateLimit()
+
     const message = [
       "A consultation enquiry was submitted through the practice website.",
       "",
@@ -207,3 +270,4 @@ export const submitConsultation = createServerFn({ method: "POST" })
       )
     }
   })
+
